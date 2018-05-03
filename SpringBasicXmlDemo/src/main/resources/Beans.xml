@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id = "helloWorld" class = "com.djm.javalearning.springbasicxmldemo.HelloWorld">
+        <property name = "message" value = "Hello World!"/>
+        <property name = "id" value = "123456"/>
+        <property name="service" ref="service"/>
+        <constructor-arg index="0" ref="anotherService"/>
+    </bean>
+
+    <bean id = "service" class = "com.djm.javalearning.springbasicxmldemo.Service">
+        <property name = "name" value = "UsefulService"/>
+    </bean>
+
+    <bean id = "anotherService" class = "com.djm.javalearning.springbasicxmldemo.AnotherService">
+        <property name = "name" value = "AnotherUsefulService"/>
+    </bean>
+
+
+</beans>
