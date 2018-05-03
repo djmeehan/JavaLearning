@@ -18,8 +18,10 @@ public class App {
 
     public static void main(String[] args) {
         ApplicationContext context =
-                new AnnotationConfigApplicationContext(App.class);
-        MessagePrinter printer = context.getBean(MessagePrinter.class);
+                new AnnotationConfigApplicationContext(App.class);   // Create & configure beans
+
+        MessagePrinter printer = context.getBean(MessagePrinter.class);   // You use getBean() to retrieve instances of your beans
+
         printer.printMessage();
     }
 }
