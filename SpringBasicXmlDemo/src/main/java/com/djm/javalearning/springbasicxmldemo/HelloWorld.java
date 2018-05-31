@@ -5,16 +5,15 @@ public class HelloWorld {
 
     private String message;
     private AnotherService anotherService;
-
-    public HelloWorld(AnotherService anotherService) {
-        this.anotherService = anotherService;
-    }
+    private Service service;
 
     public void setService(Service service) {
         this.service = service;
     }
 
-    private Service service;
+    public HelloWorld(AnotherService anotherService) {
+        this.anotherService = anotherService;
+    }
 
     public int getId() {
         return id;
