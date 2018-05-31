@@ -9,10 +9,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Unit test for simple App.
@@ -47,6 +44,7 @@ public class AppTest {
 
     @Test
     public void displayContentsOfHashMap() {
+
         Set set = hmap.entrySet();
         Iterator iterator = set.iterator();
         while(iterator.hasNext()) {
@@ -60,4 +58,28 @@ public class AppTest {
     public void getValuesWithKey() {
         System.out.println("Value at index 2 is: " + hmap.get(2));
     }
+
+    @Test
+    public void removeElementFromHashMap() {
+
+        displayContentsOfHashMap();
+        hmap.remove(2);
+        displayContentsOfHashMap();
+        Assert.assertEquals(4, hmap.size());
+    }
+
+
+    @Test
+    public void sortedHashMap(){
+        TreeMap<Integer, String> tmap = new TreeMap<>();
+
+        Set set = hmap.entrySet();
+        Iterator iterator = set.iterator();
+        while(iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry)iterator.next();
+
+        }
+
+    }
+
 }
